@@ -13,7 +13,8 @@ class TypeFormationController extends Controller
      */
     public function index()
     {
-        //
+        $typeformations= TypeFormation::all();
+        return view('typeformation', compact('typeformations'));
     }
 
     /**
@@ -35,7 +36,7 @@ class TypeFormationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TypeFormation $typeFormation)
+    public function show(TypeFormation $TypeFormation)
     {
         //
     }
@@ -43,7 +44,7 @@ class TypeFormationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TypeFormation $typeFormation)
+    public function edit(TypeFormation $TypeFormation)
     {
         //
     }
@@ -51,7 +52,7 @@ class TypeFormationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTypeFormationRequest $request, TypeFormation $typeFormation)
+    public function update(UpdateTypeFormationRequest $request, TypeFormation $TypeFormation)
     {
         //
     }
@@ -59,7 +60,7 @@ class TypeFormationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TypeFormation $typeFormation)
+    public function destroy(TypeFormation $TypeFormation)
     {
         //
     }

@@ -13,7 +13,8 @@ class FormationController extends Controller
      */
     public function index()
     {
-        //
+        $formations= Formation::all();
+        return view('formation', compact('formations'));
     }
 
     /**
@@ -35,7 +36,7 @@ class FormationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Formation $formation)
+    public function show(Formation $Formation)
     {
         //
     }
@@ -43,7 +44,7 @@ class FormationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Formation $formation)
+    public function edit(Formation $Formation)
     {
         //
     }
@@ -51,7 +52,7 @@ class FormationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFormationRequest $request, Formation $formation)
+    public function update(UpdateFormationRequest $request, Formation $Formation)
     {
         //
     }
@@ -59,7 +60,7 @@ class FormationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Formation $formation)
+    public function destroy(Formation $Formation)
     {
         //
     }

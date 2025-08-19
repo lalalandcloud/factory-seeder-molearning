@@ -9,7 +9,7 @@
     
 
     <div>
-        <h1>Batiment</h1>
+        <h1>typeFormation</h1>
     </div>
     <table>
         <thead>
@@ -19,11 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($batiments as $batiment)
-                <tr>
-                    <td>{{ $batiment['nom'] }}</td>
-                    <td>{{ $batiment['description'] }}</td>
-                </tr>            
+            @foreach ($typeformations as $typeformation)
+            
+            <tr>
+                <td>{{ $typeformation['nom'] }}</td>
+                <td>{{ $typeformation['description'] }}</td>
+            </tr>
             @endforeach
         </tbody>
     </table>

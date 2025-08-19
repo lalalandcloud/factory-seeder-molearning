@@ -9,7 +9,7 @@
     
 
     <div>
-        <h1>Batiment</h1>
+        <h1>formation</h1>
     </div>
     <table>
         <thead>
@@ -19,11 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($batiments as $batiment)
-                <tr>
-                    <td>{{ $batiment['nom'] }}</td>
-                    <td>{{ $batiment['description'] }}</td>
-                </tr>            
+            @foreach ($formations as $formation)
+            
+            <tr>
+                <td>{{ $formation['nom'] }}</td>
+                <td>{{ $formation['description'] }}</td>
+            </tr>
             @endforeach
         </tbody>
     </table>

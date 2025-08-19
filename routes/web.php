@@ -1,6 +1,14 @@
 <?php
 
 use App\Http\Controllers\BatimentController;
+use App\Http\Controllers\EleveController;
+use App\Http\Controllers\FormationController;
+use App\Http\Controllers\TypeFormationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/batiment', [BatimentController::class, 'batiment'])->name(batiment);
+Route::get('/batiment', [BatimentController::class, 'index'])->name('batiment');
+Route::get('/formation', [FormationController::class, 'index'])->name('formation');
+Route::get('/typeformation', [TypeFormationController::class, 'index'])->name('typeformation');
+Route::get('/eleves', [EleveController::class, 'index'])->name('eleves.index');
+Route::get('/eleves/create', [EleveController::class, 'create'])->name('eleves.create');
+Route::post('/eleves', [EleveController::class, 'store'])->name('eleves.store');

@@ -13,7 +13,8 @@ class EleveController extends Controller
      */
     public function index()
     {
-        //
+        $eleves= Eleve::all();
+        return view('eleves', compact('eleves'));
     }
 
     /**
@@ -21,21 +22,29 @@ class EleveController extends Controller
      */
     public function create()
     {
-        //
+        return view('eleves.create');
+        
     }
-
+    
     /**
      * Store a newly created resource in storage.
-     */
+    */
     public function store(StoreEleveRequest $request)
     {
-        //
+        Eleve::create([
+        'nom' => $request->nom,
+        'prenom' => $request->prenom,
+        'age' => $request->age,
+        'employe' => $request->has('employe'),
+        ]);
+    return redirect()->route('eleves')->with('success', 'Élève créé avec succès');
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Eleve $eleve)
+    public function show(Eleve $Eleve)
     {
         //
     }
@@ -43,7 +52,7 @@ class EleveController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Eleve $eleve)
+    public function edit(Eleve $Eleve)
     {
         //
     }
@@ -51,7 +60,7 @@ class EleveController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEleveRequest $request, Eleve $eleve)
+    public function update(UpdateEleveRequest $request, Eleve $Eleve)
     {
         //
     }
@@ -59,7 +68,7 @@ class EleveController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Eleve $eleve)
+    public function destroy(Eleve $Eleve)
     {
         //
     }
