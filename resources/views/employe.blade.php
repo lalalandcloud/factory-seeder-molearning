@@ -17,11 +17,11 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($employe as $e)
+            @foreach ($employes as $e)
                 <tr>
                     <td>{{ $e['nom'] }}</td>
                     <td>{{ $e['prenom'] }}</td>
-                    <td>{{ $e['image'] }}</td>
+                    <td><img src="{{ asset('storage/' . $e->photo) }}" alt=""></td>
                 </tr>            
             @endforeach
         </tbody>

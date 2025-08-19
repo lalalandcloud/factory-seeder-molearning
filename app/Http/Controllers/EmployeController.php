@@ -13,7 +13,8 @@ class EmployeController extends Controller
      */
     public function index()
     {
-        //
+        $employes = Employe::all();
+        return view('employe', compact('employes'));
     }
 
     /**
@@ -34,16 +35,15 @@ class EmployeController extends Controller
             'nom' => $request->nom,
             'prenom' => $request->prenom,
         ]);
-            // d'abord on vérifie qu'il y a un file dans l'input photo
-            // J'ai bien un file, je récupère celui-ci dans un variable image
-            $image=$request->file('photo');
-            // je vais créer un nom unique généré a partir du temps php + _ + le nom du fichier uploadé. 
+        if ($request->hasFile('photo')) {
+
+            $image = $request->file('photo');
             $nomfichier = time().'_'.$image->getClientOriginalName();
-            // Ensuite on va sauvegarder et dans ma fonction storeAs j'ai ('dossier', nom du fichier, 'accessible par publique' 
-            $path = $request->file('photo')->storeAs('avatars', $nomfichier, 'public');
-            // Ici j'enregistre le chemin puisque dans ma db, je stock que le chemin de l'image 
+            $path = $image->storeAs('employes', $nomfichier, 'public');
             $employe->photo = $path;
             $employe->save();
+        }
+        return redirect()-> route('employe');
     }
     
 

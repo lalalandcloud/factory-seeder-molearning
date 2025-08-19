@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{ route('eleves.store') }}" method="POST">
+    <form action="{{ route('employe.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <input type="text" name="nom" placeholder="Nom" required>
     <input type="text" name="prenom" placeholder="Prénom" required>
