@@ -18,6 +18,7 @@
                 <th>Prenom</th>
                 <th>age</th>
                 <th>employe?</th>
+                <th class="bg-danger">modification</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
                 <td>{{ $eleve['prenom'] }}</td>
                 <td>{{ $eleve['age'] }}</td>
                 <td>{{ $eleve->employe ? 'oui' : 'non' }}</td>
+                <td><a href="{{ route('eleves.edit', $eleve->id) }}">Modifier</a></td>
             </tr>
             @endforeach
         </tbody>

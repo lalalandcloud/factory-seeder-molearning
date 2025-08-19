@@ -37,8 +37,7 @@ class EleveController extends Controller
         'age' => $request->age,
         'employe' => $request->has('employe'),
         ]);
-    return redirect()->route('eleves')->with('success', 'Élève créé avec succès');
-
+        return redirect()->route('eleves')->with('success', 'Élève créé avec succès');
     }
 
     /**
@@ -52,20 +51,26 @@ class EleveController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Eleve $Eleve)
-    {
-        //
-    }
 
+    public function edit(Eleve $eleves)
+    {
+        return view('eleves.edit', compact('eleves'));
+    }
+    
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEleveRequest $request, Eleve $Eleve)
+    public function update(UpdateEleveRequest $request, Eleve $eleves)
     {
-        //
-    }
-
-    /**
+        $eleves->update([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'age' => $request->age,
+            'employe' => $request->has('employe'),
+        ]);
+        
+        return redirect()->route('eleves')->with('success', 'Élève modifié avec succès');
+    }    /**
      * Remove the specified resource from storage.
      */
     public function destroy(Eleve $Eleve)
@@ -73,3 +78,4 @@ class EleveController extends Controller
         //
     }
 }
+
