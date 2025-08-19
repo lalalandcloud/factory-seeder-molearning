@@ -2,14 +2,17 @@
 
 use App\Http\Controllers\BatimentController;
 use App\Http\Controllers\EleveController;
+use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\TypeFormationController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/batiment', [BatimentController::class, 'index'])->name('batiment');
 Route::get('/formation', [FormationController::class, 'index'])->name('formation');
 Route::get('/typeformation', [TypeFormationController::class, 'index'])->name('typeformation');
 
+Route::resource('employe', EmployeController::class);
 Route::resource('eleves', EleveController::class);
 
 // Route::get('/eleves', [EleveController::class, 'index'])->name('eleves');
