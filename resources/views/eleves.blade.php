@@ -18,7 +18,8 @@
                 <th>Prenom</th>
                 <th>age</th>
                 <th>employe?</th>
-                <th class="bg-danger">modification</th>
+                <th class="bg-success">modification</th>
+                <th class="bg-danger">suppression</th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +30,13 @@
                 <td>{{ $eleve['age'] }}</td>
                 <td>{{ $eleve->employe ? 'oui' : 'non' }}</td>
                 <td><a href="{{ route('eleves.edit', $eleve->id) }}">Modifier</a></td>
+                <td>
+                    <form action="{{ route('eleves.destroy', $eleve) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Êtes-vous sûr ?')">Supprimer</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

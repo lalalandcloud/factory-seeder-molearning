@@ -73,9 +73,11 @@ class EleveController extends Controller
     }    /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Eleve $Eleve)
+    public function destroy(Eleve $eleves)
     {
-        //
+        $eleves->delete();
+        return redirect()->route('eleves')->with('success', 'Élève supprimé avec succès');
+
     }
 }
 

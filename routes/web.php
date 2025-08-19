@@ -14,3 +14,6 @@ Route::get('/eleves/create', [EleveController::class, 'create'])->name('eleves.c
 Route::post('/eleves', [EleveController::class, 'store'])->name('eleves.store');
 Route::get('/eleves/{eleves}/edit', [EleveController::class, 'edit'])->name('eleves.edit');
 Route::put('/eleves/{eleves}', [EleveController::class, 'update'])->name('eleves.update');
+Route::delete('/eleves/{eleves}', [EleveController::class, 'destroy'])->name('eleves.destroy');
+
+// Route::resource('eleves', EleveController::class);
