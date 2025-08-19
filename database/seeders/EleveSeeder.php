@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Eleve;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 
 class EleveSeeder extends Seeder
 {
@@ -12,6 +14,6 @@ class EleveSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Eleve::factory()->count(50)->create();
     }
 }

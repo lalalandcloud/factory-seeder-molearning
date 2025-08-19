@@ -9,4 +9,5 @@ class Eleve extends Model
 {
     /** @use HasFactory<\Database\Factories\EleveFactory> */
     use HasFactory;
+    protected $fillable = ['nom', 'prenom', 'age', 'employe'];
 }
