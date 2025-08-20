@@ -19,10 +19,17 @@
         <tbody>
             @foreach ($articles as $a)
             <tr>
-                    <td>{{ $a['nom'] }}</td>
-                    <td>{{ $a['prix'] }} €</td>
-                    <td>{{ $a['decription'] }}</td>
-                    <td><img src="{{ asset('storage/'. $a->photo) }}" alt="" width="200"></w-200></td>
+                <td>{{ $a['nom'] }}</td>
+                <td>{{ $a['prix'] }} €</td>
+                <td>{{ $a['decription'] }}</td>
+                <td><img src="{{ asset('storage/'. $a->photo) }}" alt="" width="200"></w-200></td>
+                <td>
+                    <form action="{{ route('article.destroy', $a) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('sur?')">Supprimer</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
 
