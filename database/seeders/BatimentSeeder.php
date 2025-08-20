@@ -13,6 +13,7 @@ class BatimentSeeder extends Seeder
      */
     public function run(): void
     {
+        //NE PAS FAIRE COMME CA ---- LA DB EST NECESSAIRE ICI
         DB::table('batiments')->insert([
             [
                 'nom' => 'Bâtiment Principal',

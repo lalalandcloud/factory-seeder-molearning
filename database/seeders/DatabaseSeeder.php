@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TypeFormationSeeder::class,
         ]);
+        $this->call([
+            ArticleSeeder::class,
+        ]);
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

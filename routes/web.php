@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BatimentController;
 use App\Http\Controllers\EleveController;
 use App\Http\Controllers\EmployeController;
@@ -14,6 +15,7 @@ Route::get('/typeformation', [TypeFormationController::class, 'index'])->name('t
 
 Route::resource('employe', EmployeController::class);
 Route::resource('eleves', EleveController::class);
+Route::resource('article', ArticleController::class);
 
 // Route::get('/eleves', [EleveController::class, 'index'])->name('eleves');
 // Route::get('/eleves/create', [EleveController::class, 'create'])->name('eleves.create');
